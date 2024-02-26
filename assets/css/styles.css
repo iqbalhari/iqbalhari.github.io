@@ -18,8 +18,9 @@ body {
     background-image: url(/assets/img/bg/uwp4100163.jpeg);
     background-image: url(/assets/img/bg/pexels-asad-photo-maldives-3293148.jpg);
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-position: center;
+    height: 100vh;
 }
 
 /* ============== navbar Side ============== */
@@ -252,6 +253,7 @@ label.l1, label.l2 {
     transition: all 0.5s;
     padding: 25px;
     overflow: hidden;
+    /* height: 100vh; */
 }
 
 /* heading */
