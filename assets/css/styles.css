@@ -232,12 +232,12 @@ label.l1, label.l2 {
 }
 
 .glass .me p .typed {
-    background: #04002A;
+    /* background: #04002A;
     background: -moz-linear-gradient(-45deg, #6827ff 0%, #bb00ff 50%, #7337ff 100%);
     background: -webkit-linear-gradient(-45deg, #5630ff 0%, #8400ff 50%, #0aadff 100%);
     background: linear-gradient(135deg, #265be3 0%, #6a06ff 50%, #0aadff 100%);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
     position: relative;
     color: #4070F4;
     font-weight: 600;
