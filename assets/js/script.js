@@ -1,24 +1,29 @@
-(function() {
-    "use strict";
-    // Menambahkan event listener untuk mendeteksi klik pada tautan
-    document.querySelectorAll('nav .containernavitem .menu-link a').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-    event.preventDefault(); // Mencegah perpindahan halaman yang tidak diinginkan
+/**
+   * Easy selector helper function
+   */
+const select = (el, all = false) => {
+    el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+    }
+}
 
-    // Menghapus kelas 'active-link' dari semua tautan
-    document.querySelectorAll('nav .containernavitem .menu-link a').forEach(function(item) {
-    item.classList.remove('active-link');
-    });
+/**
+* Easy event listener function
+*/
+const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+        if (all) {
+            selectEl.forEach(e => e.addEventListener(type, listener))
+        } else {
+            selectEl.addEventListener(type, listener)
+        }
+    }
+}
 
-    // Menambahkan kelas 'active-link' ke tautan yang diklik
-    link.classList.add('active-link');
-
-    // Pindahkan ke halaman yang sesuai
-    window.location.href = link.getAttribute('href');
-    });
-    });
-
-
-    if (!window.contains(e.target)) window.remove("active");
-
-})();
+on('click', '.chek', function(e) {
+    select('.sidebar').classList.toggle('nav-active')
+})
