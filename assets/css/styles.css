@@ -158,6 +158,23 @@ nav .containernavitem .menu-link .active-link {
     transition: 1s;
 }
 
+div.wall {
+    color: aliceblue;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(0, 0, 33);
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.703);
+    z-index: -9999;
+    /* opacity: 0.5; */
+}
+
 /* ============== hamburger menu ============== */
 .chek {
     display: none;
@@ -213,7 +230,8 @@ label.l1, label.l2 {
     margin: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    width: 45%;
 }
 
 .glass h1 {
@@ -241,6 +259,13 @@ label.l1, label.l2 {
     position: relative;
     color: #4070F4;
     font-weight: 600;
+}
+
+.glass .me p.desk {
+    /* position: relative; */
+    /* right: 200px; */
+    margin: auto;
+    font-size: 16px;
 }
 
 /* ============== About me Section ============== */
@@ -899,12 +924,21 @@ label.l1, label.l2 {
 /* ============== 1300PX ============== */
 @media (max-width: 1300px) {
 
+    /* glass */
+    .glass .me {
+        width: 60%;
+    }
+
     /* nav */
     nav {
         transform: translateX(-1000px);
         transition: 1.5s;
     }
-
+    
+    div.wall {
+        transform: translateX(-1000px);
+        transition: 3.5s;
+    }
     /* nav .containernavitem .menu-link a:checked ~ {
         transform: translateX(-350px);
     } */
@@ -969,8 +1003,16 @@ label.l1, label.l2 {
 
 }
 
+@media (max-width: 950px) {
+    /* glass */
+    .glass .me {
+        width: 80%;
+    }
+}
+
 /* breakpoints for container ul only */
 @media (max-width: 720px) {
+
     .about .container-info-me .info .containerul ul {
         margin-left: 9px;
     }
@@ -983,7 +1025,11 @@ label.l1, label.l2 {
 
 /* ============== 555PX ============== */
 @media (max-width: 555px) {
-    
+    /* glass */
+    .glass .me {
+        width: 90%;
+    }
+
     /* nav */
     nav {
         background-color: rgba(0, 0, 33, 0.912);
