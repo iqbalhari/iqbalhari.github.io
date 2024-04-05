@@ -8,15 +8,60 @@
   overflow: hidden;
 }
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
 }
 .card .image-box {
-  height: 300px;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid aliceblue;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom-left-radius: 100px;
+  border-top-right-radius: 100px;
+  overflow: hidden;
 }
-.card .image-box img {
-  width: 100%;
-  height: 100%;
+
+.card .image-box:hover {
+  border: 2px solid dodgerblue;
+}
+
+/* .card .image-box img {
+  width: 90%;
+  height: 90%;
   border-radius: 10px;
+} */
+
+.card .image-box .image {
+  width: 280px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+
+.card .image-box .image1 {
+  background-image: url(/assets/img/showImg/1e0dcb87686777.5dc031832cfff.png);
+}
+.card .image-box .image2 {
+  background-image: url(/assets/img/showImg/_27b10b93-c5de-4e48-a921-738c40a7bb43.jpg);
+}
+.card .image-box .image3 {
+  background-image: url(/assets/img/showImg/_4a83a9d8-36b6-420c-96e5-949f2a88665c.jpg);
+}
+.card .image-box .image4 {
+  background-image: url(/assets/img/showImg/_8d675664-0cb8-4d50-ba1c-03515c6c95e3.jpg);
+}
+.card .image-box .image5 {
+  background-image: url(/assets/img/showImg/_b8fa1f38-8249-45b1-b1bf-1c75999b6af5.jpg);
 }
 
 .card .project-details {
@@ -26,7 +71,11 @@
   justify-content: space-between;
   column-gap: 12px;
   padding: 15px;
-  border-bottom: 0.1px solid #4070F4;
+  border-bottom: 0.1px solid aliceblue;
+}
+
+.card .project-details:hover {
+  border-bottom: 2px solid #4070F4;
 }
 
 .card .project-details a img {
@@ -76,9 +125,17 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+  .card .image-box .image {
+    width: 230px;
+    height: 260px;
+  }
+} 
+
 @media screen and (max-width: 555px) {
   .card .project-details a img {
     width: 30px;
     height: 30px;
   }
 }
+

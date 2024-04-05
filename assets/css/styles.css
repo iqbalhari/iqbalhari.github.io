@@ -12,16 +12,29 @@
     --link-color: blue;    
 }
 
+
 /* ============== Body Style ==============e */
 body {
-    background-image: url(/assets/img/bg/uwp3415629.jpeg);
-    background-image: url(/assets/img/bg/uwp4100163.jpeg);
-    background-image: url(/assets/img/bg/pexels-asad-photo-maldives-3293148.jpg);
+    /* background-image: url(/assets/img/bg/uwp3415629.jpeg); */
+    /* background-image: url(/assets/img/bg/uwp4100163.jpeg); */
+    /* background-image: url(/assets/img/bg/pexels-asad-photo-maldives-3293148.jpg); */
+    /* background-image: url(/assets/img/bg/wp7925511-landscape-art-wallpapers.jpg); */
+    background-attachment: fixed;
     background-size: cover;
-    background-attachment:fixed;
     background-position: center;
-    height: 100vh;
+    transition: 1s;
+    /* height: 100vh; */
+    /* animation: fade; */
 }
+
+@keyframes fade {
+    0%, 100% {
+      opacity: 0.0;
+    }
+    25%, 75% {
+      opacity: 1;
+    }
+  }
 
 /* ============== navbar Side ============== */
 nav {
@@ -37,7 +50,8 @@ nav {
     justify-content: center;
     transition: all 0.2s;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.703);
-    z-index: 9999;
+    z-index: 99999;
+    /* display: none; */
 }
 
 /* container all item in navbar */
@@ -155,60 +169,59 @@ nav .containernavitem .menu-link .active-link {
     color: aliceblue; /* Warna indikator link aktif */
     text-shadow: 3px 3px 20px var(--link-color), -2px 1px 30px var(--link-color); 
     border-bottom: 2.5px solid #4070F4;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 div.wall {
     color: aliceblue;
-    width: 300px;
+    width: 250px;
     height: 100vh;
-    background-color: rgb(0, 0, 33);
     position: fixed;
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.703);
-    z-index: -9999;
+    /* transition: all 0.8s; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.703); */
+    z-index: 99999;
     /* opacity: 0.5; */
+    display: none;
 }
+
+.wall1 {
+    width: 290px;
+    transition: all 0.3s !important;
+    z-index: 9999 !important;
+    background-color: rgb(7, 7, 58);
+}
+
+/* .wall2 {
+    z-index: 9969 !important;
+    background-color: rgb(0, 0, 255) !important;
+    width: 280px !important;
+    transition: all 0.5s !important;
+    display: none;
+} */
 
 /* ============== hamburger menu ============== */
-.chek {
-    display: none;
-}
 
-.chek:checked ~ label.l2 {
-    display: flex;
-}
-
-label.l2 {
-    display: none;
-}
-
-label.l1, label.l2 {
-    position: fixed;
-    color: #4070F4;
-    right: -1500px;
-    top: 20px;
+span.hamburger-menu {
+    /* background: rgb(0, 16, 107); */
     width: 40px;
     height: 40px;
-    font-size: 29px;
-    background-color: rgb(0, 0, 33);
-    border: 1px solid #4070F4;
-    margin-right: 25px;
+    background-image: url(/assets/img/icons-svg/icons8-hamburger-menu\ \(1\).svg);
+    background-size: cover;
+    border-radius: 10%;
+    position: fixed;
+    right: 20px;
+    top: 20px;
     cursor: pointer;
-    transition: all 0.5s ease;
-    border-radius: 50%;
-    box-shadow: inset 0 0 5px #4070F4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 999999;
+    box-shadow: 0px 0px 10px rgb(10, 0, 65);
     display: none;
-    z-index: 99999;
 }
+
 
 /* ============== Glass hero ============== */
 .glass {
@@ -275,7 +288,7 @@ label.l1, label.l2 {
     margin-left: 300px;
     /* transition: all 0.5s; */
     /* transform: translateX(300px); */
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
     /* height: 100vh; */
@@ -394,7 +407,7 @@ label.l1, label.l2 {
     margin-left: 300px;
     /* transition: all 0.5s; */
     /* transform: translateX(300px); */
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
 }
@@ -477,7 +490,7 @@ label.l1, label.l2 {
     margin-left: 300px;
     /* transition: all 0.5s; */
     /* transform: translateX(300px); */
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
 }
@@ -590,7 +603,7 @@ label.l1, label.l2 {
     background-color: rgb(78, 78, 95);
     background-color: rgb(17, 17, 68);
     margin-left: 300px;
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
 }
@@ -613,7 +626,7 @@ label.l1, label.l2 {
     margin-left: 300px;
     /* transition: all 0.5s; */
     /* transform: translateX(300px); */
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
 }
@@ -737,7 +750,7 @@ label.l1, label.l2 {
 .contact {
     background-color: #020010;
     margin-left: 300px;
-    transition: all 0.5s;
+    transition: all 2s;
     padding: 25px;
     overflow: hidden;
 }
@@ -777,6 +790,10 @@ label.l1, label.l2 {
     margin-top: 20px;
     flex-wrap: wrap;
 } 
+
+.contact .contactitem .info .info2 .info99 p {
+    font-size: 16px;
+}
 
 .contact .contactitem .info .info2 .address, .contact .contactitem .info .info2 .email, .contact .contactitem .info .info2 .phone {
     display: flex;
@@ -929,16 +946,39 @@ label.l1, label.l2 {
         width: 60%;
     }
 
+    /* hamburger-menu */
+    .hamburger-menu {
+        display: flex !important;
+    }
+
+    .hamburger-menu-active {
+        right: 23px !important;
+        top: 23px !important;
+        width: 33px !important;
+        height: 33px !important;
+        background-image: url(/assets/img/icons-svg/icons8-close.svg) !important;
+        /* background: #05206c !important; */
+    }
+
     /* nav */
     nav {
         transform: translateX(-1000px);
-        transition: 1.5s;
+        transition: 1s;
     }
+
+    /* div.wall {
+        right: -100px;
+    } */
     
-    div.wall {
-        transform: translateX(-1000px);
-        transition: 3.5s;
+    div.wall1 {
+        transform: translateX(-300px);
+        transition: 2.5s;
     }
+
+    /* div.wall2 {
+        transform: translateX(-1000px);
+        transition: 2.5s;
+    } */
     /* nav .containernavitem .menu-link a:checked ~ {
         transform: translateX(-350px);
     } */
@@ -952,7 +992,7 @@ label.l1, label.l2 {
         padding-left: 20px;
         padding-right: 20px;
         margin-left: 0;
-        transition: all 0.1s; 
+        transition: all 0s; 
     }
     
     /* nav container ul */
@@ -981,24 +1021,16 @@ label.l1, label.l2 {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
-    /* hamburger menu */
-    .chek:checked ~ label.l2 {
-        display: flex;
-    }
-
     /* nav active */
     .nav-active {
         transform: translateX(0px);
-        transition: 0.5s;
-    }
-    
-    label.l1, label.l2 {
-        right: 0;
-        display: flex;
+        transition: 0.5s ease all;
     }
 
-    label.l2 {
-        display: none;
+    /* wall */
+    .wall-active {
+        transform: translateX(0px)!important;
+        transition: 0.3s !important;
     }
 
 }
@@ -1032,9 +1064,14 @@ label.l1, label.l2 {
 
     /* nav */
     nav {
-        background-color: rgba(0, 0, 33, 0.912);
+        background-color: rgba(0, 0, 33, 0.824);
         width: 100%;
-        transition: 0.5s;
+        transition: 1s;
+    }
+
+    .wall {
+        width: 100% !important;
+        /* animation: wallAnimation 4s forwards; */
     }
 
     /* glass heading */
@@ -1064,6 +1101,7 @@ label.l1, label.l2 {
     .about .container-info-me .info .containerul {
         display: flex;
         justify-content: start;
+        flex-direction: column;
     }
 
     .about .container-info-me .info .containerul ul.ul2 {
@@ -1133,7 +1171,7 @@ label.l1, label.l2 {
 /* font face */
 @font-face {
     font-family: 'Poppins';
-    src: url(/assets/fonts/Poppins-Regular.ttf) format(truetype);
+    src: url(/assets/fonts/Poppins-Regular.ttf)
 }
 
 /* keyrames animate for ring 1 and 2 */
@@ -1159,6 +1197,20 @@ label.l1, label.l2 {
 html {
     scroll-behavior: smooth;
 }
+
+/* animation */
+@keyframes wallAnimation {
+    from {
+        /* transform: translateX(0); */
+        opacity: 1;
+    }
+    
+    to {
+        /* transform: translateX(500px); */
+        opacity: 0;
+    }
+}
+
 
 /* scrollbar style */
 ::-webkit-scrollbar {

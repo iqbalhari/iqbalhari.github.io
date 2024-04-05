@@ -26,25 +26,16 @@ var swiper = new Swiper(".slide-container", {
     0: {
       slidesPerView: 1,
     },
-    400: {
-      slidesPerView: 1,
-    },
-    640: {
+    740: {
       slidesPerView: 2,
     },
     1000: {
       slidesPerView: 3,
     },
-    1120: {
-      slidesPerView: 4,
-    },
-    1300: {
+    1327: {
       slidesPerView: 3,
     },
-    1400: {
-      slidesPerView: 3,
-    },
-    1600: {
+    1690: {
       slidesPerView: 4,
     }
   },
