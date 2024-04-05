@@ -22,7 +22,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    transition: 1s;
     /* height: 100vh; */
     /* animation: fade; */
 }
