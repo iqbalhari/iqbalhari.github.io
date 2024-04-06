@@ -30,7 +30,7 @@ menuLink.addEventListener("click", function(e) {
 
 let images = [
     'bg1.jpg','bg2.jpeg','bg4.jpg','bg5.jpg','bg9.jpg','bg12.jpg'
-]; // Ganti nama gambar sesuai dengan yang Anda miliki
+];
 
 let currentIndex = 0;
 
@@ -40,5 +40,5 @@ function changeImage() {
   document.body.style.transition = "1.5s";
 }
 
-changeImage(); // Pertama kali, panggil fungsi changeImage agar gambar berubah segera
-setInterval(changeImage, 5000); // Ubah gambar setiap 5 detik (5000 milidetik)
+changeImage();
+setInterval(changeImage, 5000);
