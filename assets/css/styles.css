@@ -15,25 +15,12 @@
 
 /* ============== Body Style ==============e */
 body {
-    /* background-image: url(/assets/img/bg/uwp3415629.jpeg); */
-    /* background-image: url(/assets/img/bg/uwp4100163.jpeg); */
-    /* background-image: url(/assets/img/bg/pexels-asad-photo-maldives-3293148.jpg); */
-    /* background-image: url(/assets/img/bg/wp7925511-landscape-art-wallpapers.jpg); */
+    background-image: url(/assets/img/bg/bg2.jpg);
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
-    /* height: 100vh; */
-    /* animation: fade; */
+    background-position: bottom;
+    background-color: #04002A;
 }
-
-@keyframes fade {
-    0%, 100% {
-      opacity: 0.0;
-    }
-    25%, 75% {
-      opacity: 1;
-    }
-  }
 
 /* ============== navbar Side ============== */
 nav {
@@ -784,7 +771,7 @@ span.hamburger-menu {
     flex-direction: column;
     align-items: start;
     align-content: start;
-    justify-content: start;
+    justify-content: space-between;
     margin: 0 auto;
     margin-top: 20px;
     flex-wrap: wrap;
