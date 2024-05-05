@@ -1,251 +1,61 @@
-let hamburgerMenu = document.querySelector(".hamburger-menu");
-let sidebar = document.querySelector(".sidebar");
-let classList = sidebar.classList;
-// let wall = document.querySelector(".wall");
-// // tidak menggunakan dom traversal
-// hamburgerMenu.addEventListener("click", function() {
-//     wall.classList.toggle("wall-active");
-//     sidebar.classList.toggle("nav-active");
-// })
+(function() {
+    // ===== Easy selector helper function
+    const select = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
+  
+    // ===== Easy on scroll event listener 
+    const onscroll = (el, listener) => {
+      el.addEventListener('scroll', listener)
+    }
+  
+    // ===== navbar links active
+    let navbarlinks = select('nav.sidebar div.containernavitem div.menu-link a', true)
+    const navbarlinksActive = () => {
+      let position = window.scrollY + 200
+      navbarlinks.forEach(navbarlink => {
+        if (!navbarlink.hash) return
+        let section = select(navbarlink.hash)
+        if (!section) return
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+          navbarlink.classList.add('active-link')
+        } else {
+          navbarlink.classList.remove('active-link')
+        }
+      })
+    }
+    window.addEventListener('load', navbarlinksActive)
+    onscroll(document, navbarlinksActive)
+  
+      /**
+     * Porfolio isotope and filter
+     */
+    window.addEventListener('load', () => {
+      let portfolioContainer = select('.card-wrapper');
+      if (portfolioContainer) {
+        let portfolioIsotope = (portfolioContainer, {
+          itemSelector: '.card'
+        });
+      }
+    });
 
-// menggunakan dom traversal atau penelusuran dom
-hamburgerMenu.addEventListener("click", function(e) {
-    // console.log(e.target.nextElementSibling.nextElementSibling.nextElementSibling);
-    // e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.toggle("wall-active");
-    // e.target.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.classList.toggle("wall-active");
-    e.target.nextElementSibling.classList.toggle("nav-active");
-    hamburgerMenu.classList.toggle("hamburger-menu-active");
-})
+    /**
+     * Initiate portfolio lightbox 
+     */
+    const portfolioLightbox = GLightbox({
+      selector: 'a.portfolio-lightbox'
+    });
 
-// window.addEventListener("click", function (e) {
-//     if (!hamburgerMenu.contains(e.target)) classList.remove("nav-active") && classList.remove("hamburger-menu");
-//     // console.log(e.target.child.child);
-// });
+    // ===== hamburger menu
+    let hamburgerMenu = select(".hamburger-menu"); 
+    hamburgerMenu.addEventListener("click", function(e) {
+        e.target.nextElementSibling.classList.toggle("nav-active");
+        hamburgerMenu.classList.toggle("hamburger-menu-active");
+    })
 
-let menuLink = document.querySelector(".menu-link");
-
-menuLink.addEventListener("click", function(e) {
-    console.log(e.target.firstElementChild);
-})
-
-// (function () {
-//     var t = (function () {
-//         var z = navigator.appVersion.toLowerCase();
-//         z = (z.indexOf("msie") > -1) ? parseInt(z.replace(/.*msie[ ]/, "").match(/^[0-9]+/)) : 0;
-//         return {
-//             ltIE6: z <= 6 && z != 0,
-//             ltIE7: z <= 7 && z != 0,
-//             ltIE8: z <= 8 && z != 0,
-//             ltIE9: z <= 9 && z != 0,
-//             ie: z != 0,
-//             firefox: window.globalStorage,
-//             opera: window.opera,
-//             webkit: !document.uniqueID && !window.opera && !window.globalStorage && window.localStorage,
-//             mobile: /android|iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase())
-//         }
-//     })();
-//     var o = "codes";
-//     var g = 100;
-//     var u = 2;
-//     var s = 10;
-//     var q = 5;
-//     var w = 1;
-//     var v = 0;
-//     var y = "png";
-//     var j = "http://htmlfreecodes.com/";
-//     var b = j + o + "/";
-//     var k = document.body;
-//     var c = "giffy_bp_" + o;
-//     var e = new Date().getTime();
-//     var d = 10;
-//     var f = 50;
-//     var l = 50;
-//     var p = 1000;
-//     var a = false;
-//     var r = new Array();
-//     var n = new Array();
-//     var x = 0;
-//     var h = {
-//         x: 0,
-//         y: 0
-//     };
-//     window[c] = {
-//         init: function () {
-//             for (i = 0; i < g; i++) {
-//                 var A = document.createElement("div");
-//                 A.style.position = "fixed";
-//                 A.style.overflow = "hidden";
-//                 A.style.visibility = "hidden";
-//                 A.style.top = 0;
-//                 A.style.left = 0;
-//                 A.style.zIndex = p + i;
-//                 A.style.zIndex = "-9";
-//                 A.style.backgroundColor = "aliceblue";
-//                 A.style.height = "6px";
-//                 A.style.width = "6px";
-//                 A.style.borderRadius = "50px";
-//                 A.style.border = "0.1px solid azure";
-//                 A.style.boxShadow = "0 0 5px aliceblue";
-//                 var z = document.createElement("img");
-//                 z.style.border = "0";
-//                 A.appendChild(z);
-//                 k.appendChild(A);
-//                 r[i] = {
-//                     obj: A,
-//                     img: z,
-//                     action: 0,
-//                     from: h,
-//                     to: h,
-//                     begin: 0,
-//                     duration: 0
-//                 }
-//             }
-//             for (i = 0; i < u; i++) {
-//                 n[i] = new Image();
-//                 n[i].src = b + "b" + (i + 1) + "." + y + (v == 1 ? "?" + e : "")
-//             }
-//             m.action();
-//             x = setInterval(m.action, d)
-//         },
-//         action: function () {
-//             if (!a) {
-//                 for (C = 0; C < u; C++) {
-//                     if (n[C].height == 0) {
-//                         return
-//                     }
-//                 }
-//                 a = true
-//             }
-//             var A = {
-//                 height: m.getViewHeight(),
-//                 width: m.getViewWidth(),
-//                 top: 0,
-//                 bottom: m.getViewHeight()
-//             };
-//             for (var C = 0; C < g; C++) {
-//                 switch (r[C].action) {
-//                 case 0:
-//                     if (m.getRandomNum(l) == 0) {
-//                         var B = n[m.getRandomNum(u)];
-//                         r[C].img.src = B.src;
-//                         var z = m.getRandomNum(A.width - B.width);
-//                         r[C].from = {
-//                             x: z,
-//                             y: 0
-//                         };
-//                         r[C].to = {
-//                             x: z,
-//                             y: A.height
-//                         };
-//                         r[C].begin = new Date() - 0;
-//                         r[C].duration = A.height * f / s;
-//                         if (q > 0) {
-//                             r[C].duration *= (1 + (0.1 * (m.getRandomNum(2) == 0 ? 1 : -1) * m.getRandomNum(q)))
-//                         }
-//                         r[C].action = 1;
-//                         m.move(r[C].obj, r[C].from);
-//                         m.setVisible(r[C].obj)
-//                     }
-//                     break;
-//                 case 1:
-//                     var D = new Date() - r[C].begin;
-//                     if (D < r[C].duration) {
-//                         m.move(r[C].obj, m.easingPos(D, r[C].from, r[C].to, r[C].duration))
-//                     } else {
-//                         m.setHidden(r[C].obj);
-//                         r[C].action = 0
-//                     }
-//                     break
-//                 }
-//             }
-//         },
-//         getRandomNum: function (z) {
-//             return Math.floor(Math.random() * z)
-//         },
-//         getViewHeight: function () {
-//             if (window.innerHeight) {
-//                 return window.innerHeight
-//             }
-//             if (document.documentElement && document.documentElement.clientHeight) {
-//                 return document.documentElement.clientHeight
-//             } else {
-//                 if (document.body && document.body.clientHeight) {
-//                     return document.body.clientHeight
-//                 }
-//             }
-//             return 0
-//         },
-//         getViewWidth: function () {
-//             if (window.innerWidth) {
-//                 return window.innerWidth
-//             }
-//             if (document.documentElement && document.documentElement.clientWidth) {
-//                 return document.documentElement.clientWidth
-//             } else {
-//                 if (document.body && document.body.clientWidth) {
-//                     return document.body.clientWidth
-//                 }
-//             }
-//             return 0
-//         },
-//         getViewTop: function () {
-//             if (window.scrollY) {
-//                 return window.scrollY
-//             }
-//             if (window.pageYOffset) {
-//                 return window.pageYOffset
-//             }
-//             if (document.documentElement && document.documentElement.scrollTop) {
-//                 return document.documentElement.scrollTop
-//             } else {
-//                 if (document.body && document.body.scrollTop) {
-//                     return document.body.scrollTop
-//                 }
-//             }
-//             return 0
-//         },
-//         getViewBottom: function () {
-//             return m.getViewTop() + m.getViewHeight()
-//         },
-//         getViewLeft: function () {
-//             if (window.scrollX) {
-//                 return window.scrollX
-//             }
-//             if (window.pageXOffset) {
-//                 return window.pageXOffset
-//             }
-//             if (document.documentElement && document.documentElement.scrollLeft) {
-//                 return document.documentElement.scrollLeft
-//             } else {
-//                 if (document.body && document.body.scrollLeft) {
-//                     return document.body.scrollLeft
-//                 }
-//             }
-//             return 0
-//         },
-//         getViewRight: function () {
-//             return m.getViewLeft() + m.getViewWidth()
-//         },
-//         easing: function (A, C, B, z) {
-//             return (B - C) * A / z + C
-//         },
-//         easingPos: function (A, C, B, z) {
-//             return {
-//                 x: m.easing(A, C.x, B.x, z),
-//                 y: m.easing(A, C.y, B.y, z)
-//             }
-//         },
-//         move: function (z, A) {
-//             z.style.top = A.y + "px";
-//             z.style.left = A.x + "px"
-//         },
-//         setHidden: function (z) {
-//             z.style.visibility = "hidden"
-//         },
-//         setVisible: function (z) {
-//             z.style.visibility = "visible"
-//         }
-//     };
-//     var m = window[c];
-//     m.init()
-// })();
+})()

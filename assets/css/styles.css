@@ -15,7 +15,7 @@
 
 /* ============== Body Style ==============e */
 body {
-    background-image: url(/assets/img/bg/bg2.jpg);
+    background-image: url(/assets/img/background-image/bg2.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -45,6 +45,7 @@ nav .containernavitem {
     width: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: start;
     align-items: center;
     gap: 10px;
 }
@@ -70,7 +71,6 @@ nav .containernavitem .myprofile .myphoto {
     background-image: url(/assets/img/me/me1.jpeg);
     background-size: cover;
     background-position: center;
-    /* background-position: 0 -10px; */
     border-radius: 50%;
     border: 6px solid #4070F4;
 }
@@ -103,7 +103,7 @@ nav .containernavitem .containerlogo a img:hover {
 /* nav link page */
 nav .containernavitem .menu-link {
     width: 73%;
-    height: 300px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -112,11 +112,12 @@ nav .containernavitem .menu-link {
     margin-top: 5px;
     border-top: 2px solid #4070F4;
     border-bottom: 2px solid #4070F4;
+    margin-bottom: 30px;
 }
 
 nav .containernavitem .menu-link a {
     width: fit-content;
-    color: rgb(148, 160, 171);
+    color: #94a0ab;
     font-weight: bolder;
     text-decoration: none;
     position: relative;
@@ -125,8 +126,50 @@ nav .containernavitem .menu-link a {
 nav .containernavitem .menu-link a:hover {
     color: aliceblue;
     text-shadow: 3px 3px 20px var(--link-color), -2px 1px 30px var(--link-color);
-    transition: 0.5s;
+    /* transition: 0.5s; */
 }
+
+nav .containernavitem .menu-link a i.icons {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    bottom: -5px;
+    left: -7px;
+}
+
+nav .containernavitem .menu-link a i.homeicon {
+    background-image: url(/assets/icons/menu-link-icons/home1.png);
+}
+
+nav .containernavitem .menu-link a i.abouticon {
+    background-image: url(/assets/icons/menu-link-icons/about1.png);
+}
+
+nav .containernavitem .menu-link a i.skillticon {
+    background-image: url(/assets/icons/menu-link-icons/skill1.png);
+}
+
+nav .containernavitem .menu-link a i.serviceicon {
+    background-image: url(/assets/icons/menu-link-icons/service1.png);
+}
+
+nav .containernavitem .menu-link a i.projecticon {
+    background-image: url(/assets/icons/menu-link-icons/projects1.png);
+}
+
+nav .containernavitem .menu-link a i.portfolioicon {
+    background-image: url(/assets/icons/menu-link-icons/portfolio1.png);
+}
+
+nav .containernavitem .menu-link a i.contacticon {
+    background-image: url(/assets/icons/menu-link-icons/contact1.png);
+
+}
+
 
 /* animation menulink */
 /* nav .containernavitem .menu-link a::after {
@@ -155,7 +198,12 @@ nav .containernavitem .menu-link .active-link {
     color: aliceblue; /* Warna indikator link aktif */
     text-shadow: 3px 3px 20px var(--link-color), -2px 1px 30px var(--link-color); 
     border-bottom: 2.5px solid #4070F4;
-    transition: 0.5s;
+    /* transition: 0s; */
+}
+
+nav .containernavitem .menu-link a.active-link i.icons {
+    filter: brightness(9999%) contrast(9999%) hue-rotate(9999deg);
+    /* filter: brightness(105%) hue-rotate(7200deg); */
 }
 
 div.wall {
@@ -196,7 +244,7 @@ span.hamburger-menu {
     /* background: rgb(0, 16, 107); */
     width: 40px;
     height: 40px;
-    background-image: url(/assets/img/icons-svg/icons8-hamburger-menu\ \(1\).svg);
+    background-image: url(/assets/icons/hamburger-menu-icons/hamburger-menu.svg);
     background-size: cover;
     border-radius: 10%;
     position: fixed;
@@ -311,7 +359,7 @@ span.hamburger-menu {
 .about .container-info-me .myphoto2 {
     width: 330px;
     height: 330px;
-    background-image: url(/assets/img/me/me2.jpeg);
+    background-image: url(/assets/img/me/_f23568ff-00d5-4d10-ba47-c3b2dbe18bf6.jpeg);
     background-position: center;
     /* background-position: 0px -50px; */
     background-size: cover;
@@ -469,6 +517,64 @@ span.hamburger-menu {
     border-radius: 10px;
 }
 
+.skills .progress .logos {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    bottom: -10px;
+    left: -7px;
+}
+
+.skills .progress .logo1 {
+    background-image: url(/assets/icons/program-logo/html.svg);
+}
+
+.skills .progress .logo2 {
+    background-image: url(/assets/icons/program-logo/css.svg);
+}
+
+.skills .progress .logo3 {
+    background-image: url(/assets/icons/program-logo/javascript.svg);
+}
+
+.skills .progress .logo4 {
+    background-image: url(/assets/icons/program-logo/python.svg);
+}
+
+.skills .progress .logo5 {
+    background-image: url(/assets/icons/program-logo/php.svg);
+    width: 40px;
+    height: 22px;
+    top: 5px;
+}
+
+.skills .progress .logo6 {
+    background-image: url(/assets/icons/program-logo/java.svg);
+}
+
+.skills .progress .logo7 {
+    background-image: url(/assets/icons/program-logo/figma.svg);
+}
+
+.skills .progress .logo8 {
+    background-image: url(/assets/icons/program-logo/microsoft-excel-2019.svg);
+}
+
+.skills .progress .logo9 {
+    background-image: url(/assets/icons/program-logo/microsoft-word-2019.svg);
+}
+
+.skills .progress .logo10 {
+    background-image: url(/assets/icons/program-logo/google-sheets.svg);
+}
+
+.skills .progress .logo11 {
+    background-image: url(/assets/icons/program-logo/google-forms.svg);
+}
+
 /* ============== Services ============== */
 .services {
     background-color: whitesmoke;
@@ -542,11 +648,11 @@ span.hamburger-menu {
 }
 
 .services .containercard .card1 .img {
-    background-image: url(/assets/img/icons-svg/icons8-source-code-96.png);
+    background-image: url(/assets/icons/a-service-icons/source-code.png);
 }
 
 .services .containercard .card2 .img {
-    background-image: url(/assets/img/icons-svg/icons8-design-96\ \(1\).png);
+    background-image: url(/assets/icons/a-service-icons/design.png);
     width: 70px;
     height: 70px;
 }
@@ -556,7 +662,7 @@ span.hamburger-menu {
 }
 
 .services .containercard .card4 .img {
-    background-image: url(/assets/img/icons-svg/icons8-cyber-security-96\ \(3\).png);
+    background-image: url(/assets/icons/a-service-icons/cyber-security.png);
     width: 90px;
     height: 70px;
     margin-bottom: 0;
@@ -638,14 +744,10 @@ span.hamburger-menu {
 }
 
 .portfolio .containerallimage .image-container {
-    background-image: url(/assets/img/showImg/img2.png);
     background-size: cover;
     position: relative;
     width: 280px;
     height: 350px;
-}
-
-.portfolio .image-container {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -656,6 +758,10 @@ span.hamburger-menu {
     /* transition: all 1s; */
 }
 
+.portfolio .containerallimage .portfolio1 {
+    background-image: url(/assets/img/projects/Screenshot\ \(203\).png);
+    background-position: -15px -50px;
+}
 
 .portfolio .gradient-overlay {
     overflow: hidden;
@@ -794,13 +900,13 @@ span.hamburger-menu {
 }
 
 .contact .contactitem .info .info2 .address .span1 {
-    background-image: url(/assets/img/icons-svg/icons8-location-100.png);
+    background-image: url(/assets/icons/contact-icons/location.png);
     width: 30px;
     height: 30px;
 }
 
 .contact .contactitem .info .info2 .email .span2 {
-    background-image: url(/assets/img/icons-svg/icons8-email-100.png);
+    background-image: url(/assets/icons/contact-icons/email.png);
     width: 28px;
     height: 28px;
 }
@@ -808,7 +914,7 @@ span.hamburger-menu {
 .contact .contactitem .info .info2 .phone .span3 {
     width: 30px;
     height: 30px;
-    background-image: url(/assets/img/icons-svg/icons8-telephone-100.png);
+    background-image: url(/assets/icons/contact-icons/telephone.png);
 }
 
 .contact .contactitem .info iframe {
@@ -942,7 +1048,7 @@ span.hamburger-menu {
         top: 23px !important;
         width: 33px !important;
         height: 33px !important;
-        background-image: url(/assets/img/icons-svg/icons8-close.svg) !important;
+        background-image: url(/assets/icons/hamburger-menu-icons/close.svg) !important;
         /* background: #05206c !important; */
     }
 
@@ -1157,7 +1263,7 @@ span.hamburger-menu {
 /* font face */
 @font-face {
     font-family: 'Poppins';
-    src: url(/assets/fonts/Poppins-Regular.ttf)
+    src: url(/assets/fonts/Poppins-Regular.ttf) format(truetype);
 }
 
 /* keyrames animate for ring 1 and 2 */

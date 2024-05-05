@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid aliceblue; */
+  border: 2px solid transparent;
   padding: 10px;
   box-sizing: border-box;
   /* border-bottom-left-radius: 100px; */
@@ -47,22 +47,25 @@
   border-radius: 5px;
   /* border-bottom-right-radius: 50px; */
   /* border-top-left-radius: 50px; */
+
 }
 
 .card .image-box .image1 {
-  background-image: url(/assets/img/showImg/img1.jpg);
+  background-image: url(/assets/img/projects/Screenshot\ \(203\).png);
+  background-position: -15px 0px;
 }
 .card .image-box .image2 {
-  background-image: url(/assets/img/showImg/img2.png);
+  background-image: url(/assets/img/projects/Screenshot\ \(206\).png);
+  /* background-position: -40px 0; */
 }
 .card .image-box .image3 {
-  background-image: url(/assets/img/showImg/img3.jpg);
+  background-image: url(/assets/img/projects/Screenshot\ \(205\).png);
 }
 .card .image-box .image4 {
-  background-image: url(/assets/img/showImg/img4.jpg);
+  background-image: url(/assets/img/projects/img4.jpg);
 }
 .card .image-box .image5 {
-  background-image: url(/assets/img/showImg/img5.jpg);
+  background-image: url(/assets/img/projects/img5.jpg);
 }
 
 .card .project-details {
@@ -76,7 +79,7 @@
 }
 
 .card .project-details:hover {
-  border-bottom: 2px solid #4070F4;
+  border-bottom: 0.1px solid #4070F4;
 }
 
 .card .project-details a img {
