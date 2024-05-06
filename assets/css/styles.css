@@ -918,6 +918,7 @@ span.hamburger-menu {
 }
 
 .contact .contactitem .info iframe {
+    border: 0.1px solid aliceblue;
     width: 100%;
 }
 
