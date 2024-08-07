@@ -283,6 +283,7 @@ span.hamburger-menu {
 
 .glass h1 {
     color: aliceblue;
+    /* font-size: 39px; */
     font-size: 59px;
     /* background: -moz-linear-gradient(-45deg, #e3d7ff 0%, #efc5ff 50%, #d4c2ff 100%);
     background: -webkit-linear-gradient(-45deg, #d2c7ff 0%, #e3c4ff 50%, #bfeaff 100%);
@@ -290,6 +291,14 @@ span.hamburger-menu {
     background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
+
+/* .glass h1 span.line-prompt {
+    color: rgb(0, 172, 172);
+}
+
+.glass h1 span.prompt {
+    color: #4070F4;
+} */
 
 .glass p {
     font-size: 24px;
